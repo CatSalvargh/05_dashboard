@@ -1,1 +1,69 @@
+$gap: 10px
+$header-height: 15vh
+$footer-height: 5vh
+$main-height: calc(95vh - calc($header-height + $footer-height + $gap * 2))
+$main-width: clamp(300px, 65vw, 70vw)
 
+.grid-container
+    display: grid
+    width: 95vw
+    height: fit-content
+    margin: 0 auto
+    grid-template-columns: (autofill, 200px)
+    grid-template-rows: (autofit, 1fr)
+    grid-template-areas: 'side-left header header' 'side-left main side-right' 'side-left main side-right' 'side-left footer footer'
+    gap: calc($gap)
+
+.logo-container 
+    grid-area: 1 / 1 / span 1 / span 1
+    max-width: 20vw
+    height: $header-height
+    border: 1px solid aqua
+    z-index: 1
+
+
+.nav 
+    grid-area: header
+    height: $header-height
+    background-color: $white
+
+.nav, .main-container, .side-left, .side-right
+    box-shadow: 3px 3px 5px lightgray
+    border-radius: 4px
+
+.main-container 
+    grid-area: main
+    width: $main-width
+    height: $main-height
+    background-color: white
+    align-self: start
+    align-self: center
+
+.side-left 
+    grid-area: side-left
+    height: 100vh
+    width: clamp(150px, 15vw, 300px)
+    background-color: $sidebars
+    align-self: start
+    position: relative
+
+    &::before
+        content: ''
+        display: block
+        background-color: $secondary
+        width: 30%
+        height: 100%
+
+.side-right 
+    grid-area: side-right
+    height: $main-height
+    width: 12vw
+    background-color: $sidebars
+    align-self: start
+
+
+footer 
+    grid-area: footer
+    height: $footer-height
+    background: $secondary
+    align-self: start
