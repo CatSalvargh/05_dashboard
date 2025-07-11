@@ -1,24 +1,35 @@
 .main-container 
     display: grid
-    grid-template-columns: repeat(3, minmax(300px, 30%))
-    grid-template-rows: autofit 1fr
+    grid-template-columns: repeat(3, minmax(90px, 30%))
+    grid-template-rows: autofit, minmax(90px 300px)
     justify-content: center
     align-item: center
-    gap: calc($gap * 1.5)
     padding: 1rem
 
     & .card
+        position: relative
         width: 95%
-        height: 95%
+        height: 90%
         border-radius: 8px
         border: 1px solid lightgray
         box-shadow: 3px 3px 5px lightgray
+        display: grid
+        grid-template-columns: autofit minmax(90px, 200px)
+        grid-template-rows: autofit minmax(90px, 200px)
+        padding: 0 1rem
 
         &::before 
             &::before
             content: ''
             display: block
-            background-color: $secondary
+            background-color: lighten($accent, 20%)
             width: 3%
             height: 100%
             border-radius: 5px
+            position: absolute
+            top: 0
+            left: 0
+
+        & p 
+            font-size: 0.75rem
+            padding: 0.25rem

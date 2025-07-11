@@ -10,6 +10,8 @@
     grid-template-columns: 1fr
     grid-template-rows: (autofit 1fr)
     gap: $gap
+    font-family: quicksand-bold
+    font-weight: bolder
 
     & .left-btn-container
         width: 100%
@@ -17,17 +19,22 @@
         justify-content: space-evenly
         align-items: center
 
+        &:hover, &:focus
+            box-shadow: 2px 2px 2px lighten($text-main, 40%), 4px 4px 10px $white
+
     & button
         background: transparent
         border: none
         width: 60%
         text-align: left
-        font-size: clamp(12px, 1.2rem, 40px)
+        font-size: clamp(12px, 1rem, 40px)
         padding-left: 5px
+        text-shadow: 2px 2px 6px lighten($text-main, 20%)
+        color: lighten($main, 20%)
     
     & img
-        width: clamp(30px, 15%, 40px)
-        height: clamp(35px, 15%, 40px)
+        width: clamp(20px, 12%, 30px)
+        height: clamp(25px, 12%, 30px)
 
     & .help-buttons
         align-self: end
