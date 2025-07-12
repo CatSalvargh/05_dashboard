@@ -24,47 +24,47 @@
 
 header
     display: grid
-    grid-template-columns: repeat(2 minmax(200px, 50vw))
-    grid-template-rows: (autofit 50px)
+    grid-template-columns: repeat(autofit, minmax(200px, 100%))
+    grid-template-rows: auto 1fr
     padding: 0 2rem
     font-family: Quicksand-bold
     align-items: center
     
     .name
         display: flex
-        padding: 0 0 1rem 1rem
-        width: 25vw
+        padding: 0 1rem
 
         & img
-            height: 50px
+            height: 40px
             width: auto
-        
-        & h2, h3
-            align-self: flex-end
-            font-size: clamp(12px, 1.25rem, 40px)
 
         h2
+            align-self: flex-end
+            font-size: clamp(12px, 1.25rem, 40px)
             color: $main
             margin-left: 10px
             font-weight: bolder
+            width: 70%
 
     .search-bar
-        width: 40vw
+        width: 70%
         height: 3vh
         display: flex
         justify-content: center
         gap: $gap
         justify-self: end
+        padding-right: 2.5rem
         
         & #search
-            width: 70%
+            width: 100%
             border: 1px solid lightgray
             box-shadow: 3px 3px 5px lightgray
             border-radius: 15px
         
         & img
-            width: 30px
-            height: 30px
+            width: 20px
+            height: 20px
+            object-fit: cover
 
 
     .nav
@@ -73,16 +73,16 @@ header
         height: 8vh
         display: flex
         justify-content: flex-end
+        padding-right: 2rem
         align-items: center
         flex-wrap: wrap
         gap: calc($gap * 2)
         
 
         & button
-            height: 50%
-            width: 15%
-            padding: 0.35rem
+            height: 4vh
+            width: clamp(50px, 20%, 80px)
+            padding: 0.3rem
             color: $white
-            font-size: clamp(10px, 0.9rem, 30px)
-
+            font-size: clamp(10px, 0.9rem, 40%)
     

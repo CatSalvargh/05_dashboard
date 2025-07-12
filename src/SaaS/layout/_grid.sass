@@ -2,15 +2,15 @@ $gap: 10px
 $header-height: 15vh
 $footer-height: 5vh
 $main-height: calc(95vh - calc($header-height + $footer-height + $gap * 2))
-$main-width: clamp(300px, 65vw, 70vw)
+$main-width: clamp(150px, 65vw, 1000px)
 
 .grid-container
     display: grid
-    width: 95vw
+    width: 100vw
     height: fit-content
     margin: 0 auto
-    grid-template-columns: (autofill, 200px)
-    grid-template-rows: (autofit, 200px)
+    grid-template-columns: (autofit, 150px)
+    grid-template-rows: minmax(100px, auto)
     grid-template-areas: 'side-left header header' 'side-left main side-right' 'side-left main side-right' 'side-left footer footer'
     gap: calc($gap)
 
@@ -40,7 +40,7 @@ header
 .side-left 
     grid-area: side-left
     height: 100vh
-    width: clamp(150px, 15vw, 300px)
+    width: clamp(140px, 15vw, 300px)
     background-color: $sidebars
     align-self: start
     position: relative
